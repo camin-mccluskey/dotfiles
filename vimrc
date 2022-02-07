@@ -34,6 +34,9 @@ endif
 " Better command-line completion
 set wildmenu
 
+" Map leader key to '
+let mapleader = "'"
+
 " Show partial commands in the last line of the screen
 set showcmd
 
