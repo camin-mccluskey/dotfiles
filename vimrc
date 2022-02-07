@@ -13,9 +13,12 @@ call plug#begin()
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
+Plug 'morhetz/gruvbox'
 " Initialize plugin system
 call plug#end()
+
+" Gruvbox setup
+autocmd vimenter * ++nested colorscheme gruvbox
 
 
 " Attempt to determine the type of a file based on its name and possibly its
@@ -27,11 +30,6 @@ endif
 
 " Enable line numbers
 :set relativenumber
-
-" Enable syntax highlighting
-if has('syntax')
-  syntax on
-endif
 
 " Better command-line completion
 set wildmenu
