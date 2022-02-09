@@ -20,6 +20,8 @@ call plug#end()
 " Gruvbox setup
 autocmd vimenter * ++nested colorscheme gruvbox
 
+" Let NerdTree file explorer show hidden files
+let NERDTreeShowHidden=1
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
@@ -36,6 +38,9 @@ set wildmenu
 
 " Map leader key to '
 let mapleader = "'"
+
+" Set spellchecker to US English
+" set spell spelllang=eu_us
 
 " Show partial commands in the last line of the screen
 set showcmd
