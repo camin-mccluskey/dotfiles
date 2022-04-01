@@ -30,6 +30,9 @@ if has('filetype')
   filetype indent plugin on
 endif
 
+" Use new regular expression engine
+set re=0
+
 " Enable line numbers
 :set relativenumber
 
