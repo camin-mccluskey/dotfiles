@@ -103,16 +103,16 @@ alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus-montior
-alt-left = "focus-monitor left"
-alt-up = "focus-monitor up"
-alt-down = "focus-monitor down"
-alt-right = "focus-monitor right"
+# alt-left = "focus-monitor left"
+# alt-up = "focus-monitor up"
+# alt-down = "focus-monitor down"
+# alt-right = "focus-monitor right"
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
-alt-shift-left = "move-node-to-monitor left"
-alt-shift-up = "move-node-to-monitor up"
-alt-shift-down = "move-node-to-monitor down"
-alt-shift-right = "move-node-to-monitor right"
+# alt-shift-left = "move-node-to-monitor left"
+# alt-shift-up = "move-node-to-monitor up"
+# alt-shift-down = "move-node-to-monitor down"
+# alt-shift-right = "move-node-to-monitor right"
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 # alt-tab = 'workspace-back-and-forth'
