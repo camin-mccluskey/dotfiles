@@ -23,5 +23,15 @@ config.window_padding = {
 }
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 
+-- keymap overrides/extensions
+config.keys = {
+	-- disable quit wezterm keybinding
+	{
+		key = "q",
+		mods = "SHIFT|CTRL",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+}
+
 -- and finally, return the configuration to wezterm
 return config
