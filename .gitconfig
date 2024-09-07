@@ -1,0 +1,19 @@
+# default to personal config
+[include]
+  path = ~/.gitconfig.personal
+
+# when working on workp projects, use the work config
+[includeIf "gitdir:**/stackfix/**/.git"]
+  path = ~/.gitconfig.work
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+
+[push]
+	autoSetupRemote = true
+
+[core]
+	ignoreCase = true
+

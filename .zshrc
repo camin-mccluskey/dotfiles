@@ -151,3 +151,43 @@ export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 # bun completions
 [ -s "/Users/caminmccluskey/.bun/_bun" ] && source "/Users/caminmccluskey/.bun/_bun"
+
+# Eza (better ls)
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+
+# FZF
+# fzf keybindings and fuzzy completion
+eval "$(fzf --zsh)"
+# fzf settings
+export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git node_modules"
+
+# use fd for listing path candidates.
+# - The first arg is the base path to start traversal
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude .git . "$1"
+}
+# use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type=d --hidden --follow --exclude .git . "$1"
+}
+
+# preview fzf output with bat
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+# export FZF_ALT_C_OPTS="--preview 'eza --tree -n --color=always {} | head -200'"
+
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$' {}" "$@" ;;
+    ssh)          fzf --preview 'dig {}' "$@" ;;
+    *)            fzf preview "--preview 'bat -n --color=always --line-range :500 {}" "$@" ;;
+  esac
+}
+
+# Bat (better cat)
+export BAT_THEME="rose-pine-moon"
