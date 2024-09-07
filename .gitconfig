@@ -2,7 +2,7 @@
 [include]
   path = ~/.gitconfig.personal
 
-# when working on workp projects, use the work config
+# when working on work projects, use the work config
 [includeIf "gitdir:**/stackfix/**/.git"]
   path = ~/.gitconfig.work
 
