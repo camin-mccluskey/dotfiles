@@ -108,6 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias nv="nvim" # default neovim config
 alias nvk="NVIM_APPNAME=nvim-kickstart nvim" # kickstart neovim config
+alias nvb="NVIM_APPNAME=nvim-basic nvim" # scratch neovim config
 
 alias gs="git status"
 alias gaa="git add ."
