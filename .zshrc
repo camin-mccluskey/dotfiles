@@ -106,16 +106,23 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# GNU Stow alias
+alias stow-dotfiles="stow -t $HOME ."
+
+# Neovim aliases 
 alias nv="nvim" # default neovim config
 alias nvk="NVIM_APPNAME=nvim-kickstart nvim" # kickstart neovim config
 alias nvb="NVIM_APPNAME=nvim-basic nvim" # scratch neovim config
 
+# Git aliases 
 alias gs="git status"
 alias gaa="git add ."
 alias gcm="git commit -m"
 alias gco="git checkout"
 alias gcob="git checkout -b"
 
+# Random aliases 
 alias cdw="cd ~/projects/stackfix/"
 alias sshpi="ssh camin@192.168.1.104"
 alias todo="todo.sh -a -t -c"
@@ -192,3 +199,7 @@ _fzf_comprun() {
 
 # Bat (better cat)
 export BAT_THEME="rose-pine-moon"
+
+# Stripe shell completion
+fpath=(~/.stripe $fpath)
+autoload -Uz compinit && compinit -i
