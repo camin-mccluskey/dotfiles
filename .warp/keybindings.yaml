@@ -1,2 +1,5 @@
 ---
 "workspace:toggle_ai_assistant": none
+"pane_group:navigate_down": ctrl-j
+"pane_group:navigate_left": ctrl-h
+"pane_group:navigate_right": ctrl-l
