@@ -5,9 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -110,19 +107,20 @@ source $ZSH/oh-my-zsh.sh
 # GNU Stow alias
 alias stow-dotfiles="stow -t $HOME ."
 
-# Neovim aliases 
+# Neovim aliases
 alias nv="nvim" # default neovim config
 alias nvk="NVIM_APPNAME=nvim-kickstart nvim" # kickstart neovim config
 alias nvb="NVIM_APPNAME=nvim-basic nvim" # scratch neovim config
+alias nvim-reset="rm -rf ~/.cache/nvim ~/.local/share/nvim/ ~/.local/state/nvim"
 
-# Git aliases 
+# Git aliases
 alias gs="git status"
 alias gaa="git add ."
 alias gcm="git commit -m"
 alias gco="git checkout"
 alias gcob="git checkout -b"
 
-# Random aliases 
+# Random aliases
 alias cdw="cd ~/projects/stackfix/"
 alias sshpi="ssh camin@192.168.1.104"
 alias todo="todo.sh -a -t -c"
@@ -147,11 +145,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-# Set CLICOLOR if you want Ansi Colors in iTerm2 
-export CLICOLOR=1
-# Set colors to match iTerm2 Terminal Colors
-export TERM=xterm-256color
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
