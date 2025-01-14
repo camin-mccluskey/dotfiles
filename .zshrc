@@ -119,6 +119,7 @@ alias gaa="git add ."
 alias gcm="git commit -m"
 alias gco="git checkout"
 alias gcob="git checkout -b"
+function gfb() { git branch --all | grep $1; }
 
 # Random aliases
 alias cdw="cd ~/projects/stackfix/"
