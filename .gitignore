@@ -1,1 +1,4 @@
 .zsh.env
+.aws/*
+# allow config file only
+!.aws/config

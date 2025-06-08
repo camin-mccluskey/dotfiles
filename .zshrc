@@ -127,6 +127,7 @@ function gfb() { git branch --all | grep $1; }
 alias cdw="cd ~/projects/stackfix/"
 alias sshpi="ssh camin@192.168.1.104"
 alias todo="todo.sh -a -t -c"
+alias cdp="cd ~/projects/personal-site/camin-dev/"
 
 # Opens a new tmux session with the given name
 function tmux-new() { tmux new -s "$1"; }
@@ -199,3 +200,20 @@ export BAT_THEME="rose-pine-moon"
 # Stripe shell completion
 fpath=(~/.stripe $fpath)
 autoload -Uz compinit && compinit -i
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/caminmccluskey/.lmstudio/bin"
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/caminmccluskey/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/lib/ruby/gems/3.4.0/bin:$PATH"
+
+# aws-cli completion
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+complete -C '/usr/local/bin/aws_completer' aws
