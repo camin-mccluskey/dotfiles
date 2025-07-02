@@ -128,6 +128,7 @@ alias cdw="cd ~/projects/stackfix/"
 alias sshpi="ssh camin@192.168.1.104"
 alias todo="todo.sh -a -t -c"
 alias cdp="cd ~/projects/personal-site/camin-dev/"
+alias code="cursor"
 
 # Opens a new tmux session with the given name
 function tmux-new() { tmux new -s "$1"; }
@@ -214,6 +215,6 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/lib/ruby/gems/3.4.0/bin:$PATH"
 
 # aws-cli completion
-autoload bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
-complete -C '/usr/local/bin/aws_completer' aws
+# autoload bashcompinit && bashcompinit
+# autoload -Uz compinit && compinit
+# complete -C '/usr/local/bin/aws_completer' aws
