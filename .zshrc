@@ -218,3 +218,6 @@ export PATH="/opt/homebrew/lib/ruby/gems/3.4.0/bin:$PATH"
 # autoload bashcompinit && bashcompinit
 # autoload -Uz compinit && compinit
 # complete -C '/usr/local/bin/aws_completer' aws
+
+# opencode
+export PATH=/Users/caminmccluskey/.opencode/bin:$PATH
