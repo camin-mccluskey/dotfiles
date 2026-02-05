@@ -10,4 +10,4 @@ My dotfiles for configuration of tools. Managed by [GNU Stow](https://www.gnu.or
 
 ## Ongoing Developement
 
-Once you have this configuration symlinked you can use the command `stow-dotfiles` from the root of this directory to stow new configuration into $HOME. 
+Once you have this configuration symlinked you can use the command `stow-dotfiles` from the root of this directory to stow new configuration into $HOME.

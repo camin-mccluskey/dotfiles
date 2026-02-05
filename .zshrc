@@ -221,3 +221,4 @@ export PATH="/opt/homebrew/lib/ruby/gems/3.4.0/bin:$PATH"
 
 # opencode
 export PATH=/Users/caminmccluskey/.opencode/bin:$PATH
+autoload -U compinit; compinit
