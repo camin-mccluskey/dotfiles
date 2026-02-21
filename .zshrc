@@ -130,6 +130,48 @@ alias todo="todo.sh -a -t -c"
 alias cdp="cd ~/projects/personal-site/camin-dev/"
 alias code="cursor"
 
+# timer - congigurable in mins
+timer() {
+  if [ -z "$1" ]; then
+    echo "Usage: timer <minutes>"
+    return 1
+  fi
+
+  local mins="$1"
+  local secs=$((mins * 60))
+
+  echo "Timer: $mins minute(s)"
+
+  while [ "$secs" -gt 0 ]; do
+    printf "\r%02d:%02d remaining" $((secs / 60)) $((secs % 60))
+    sleep 1
+    secs=$((secs - 1))
+  done
+
+  printf "\r00:00 remaining\n"
+  terminal-notifier -title 'Timer' -subtitle "Time's up" -message "Time's up" -sound 'recv_mail'
+}
+
+# Create pyenv-virtualenv with (optional) Python version. Fallsback to current defauly Python version
+mkvenv() {
+  # Usage: mkvenv [python_version]
+  # Example: mkvenv 3.11.8  (uses that version)
+  #          mkvenv         (uses current pyenv version-name)
+
+  local requested_version="$1"
+  local base_version
+  local env_name="${PWD##*/}"
+
+  if [ -n "$requested_version" ]; then
+    base_version="$requested_version"
+  else
+    base_version="$(pyenv version-name)"
+  fi
+
+  pyenv virtualenv "$base_version" "$env_name" && pyenv local "$env_name"
+  echo "Created pyenv virtualenv '$env_name' with Python $base_version and set it as local."
+}
+
 # Opens a new tmux session with the given name
 function tmux-new() { tmux new -s "$1"; }
 
