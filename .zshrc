@@ -124,11 +124,14 @@ alias gcob="git checkout -b"
 function gfb() { git branch --all | grep $1; }
 
 # Random aliases
-alias cdw="cd ~/projects/stackfix/"
+alias cdp="cd ~/projects/personal-site/camin-dev/"
+alias cdw="cd ~/projects/idetic/"
 alias sshpi="ssh camin@192.168.1.104"
 alias todo="todo.sh -a -t -c"
-alias cdp="cd ~/projects/personal-site/camin-dev/"
-alias code="cursor"
+alias ha="harsh ask"
+alias pm="pomo"
+# Eza (better ls)
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
 # timer - congigurable in mins
 timer() {
@@ -200,9 +203,6 @@ export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 # bun completions
 [ -s "/Users/caminmccluskey/.bun/_bun" ] && source "/Users/caminmccluskey/.bun/_bun"
 
-# Eza (better ls)
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-
 # FZF
 # fzf keybindings and fuzzy completion
 eval "$(fzf --zsh)"
@@ -247,11 +247,17 @@ autoload -Uz compinit && compinit -i
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/caminmccluskey/.lmstudio/bin"
 
+# For Go binaries tools
+export PATH="$HOME/go/bin:$PATH"
+
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/caminmccluskey/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+# Kubectl completions
+source <(kubectl completion zsh)
 
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/lib/ruby/gems/3.4.0/bin:$PATH"

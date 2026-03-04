@@ -1,6 +1,6 @@
 # action to take after session completion
 # options: "ask" | "start" | "quit"
-onSessionEnd: "ask"
+onSessionEnd: "start"
 
 asciiArt:
   # use ASCII art for timer display
@@ -25,12 +25,16 @@ work:
     title: work finished 🎉
     message: time to take a break
 
+  then:
+    - [say, "Work session over, take a low-dopamine break"]
+
 break:
   duration: 5m
 
+
   # will run after the session ends
   then:
-    - [spd-say, "Let's get back to work"]
+    - [say, "Let's get back to work"]
 
 longBreak:
   # enable long break after a certain number of work sessions
